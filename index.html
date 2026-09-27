@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Chatterly</title>
 
 <style>
@@ -14,14 +14,13 @@
 
 :root{
   --bg:#f5f7fb;
-  --card:#ffffff;
+  --card:#fff;
   --text:#111827;
   --muted:#6b7280;
   --primary:#2563eb;
-  --primary2:#1d4ed8;
   --border:#e5e7eb;
   --mine:#dbeafe;
-  --other:#ffffff;
+  --other:#fff;
 }
 
 body.dark{
@@ -30,13 +29,13 @@ body.dark{
   --text:#f9fafb;
   --muted:#9ca3af;
   --primary:#3b82f6;
-  --primary2:#2563eb;
-  --border:#243044;
+  --border:#263247;
   --mine:#1e3a5f;
   --other:#172033;
 }
 
 body{
+  margin:0;
   background:var(--bg);
   color:var(--text);
   font-family:Arial,sans-serif;
@@ -56,9 +55,9 @@ button{
   display:none!important;
 }
 
-/* LOGIN */
+/* GET STARTED */
 
-#loginPage{
+#welcomePage{
   height:100vh;
   display:flex;
   justify-content:center;
@@ -66,67 +65,71 @@ button{
   padding:20px;
 }
 
-.login-card{
+.welcome-card{
   width:100%;
-  max-width:400px;
+  max-width:420px;
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:22px;
-  padding:35px 25px;
+  border-radius:25px;
+  padding:40px 28px;
   text-align:center;
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  box-shadow:0 15px 45px rgba(0,0,0,.08);
 }
 
 .logo{
-  width:70px;
-  height:70px;
-  border-radius:20px;
+  width:78px;
+  height:78px;
+  margin:0 auto 20px;
+  border-radius:23px;
+  background:var(--primary);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:35px;
+  font-weight:bold;
+}
+
+.welcome-card h1{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.welcome-card p{
+  color:var(--muted);
+  line-height:1.5;
+  margin-bottom:28px;
+}
+
+.start-btn{
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:13px;
   background:var(--primary);
   color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
   font-weight:bold;
-  margin:0 auto 18px;
+  font-size:16px;
 }
 
-.login-card h1{
-  font-size:30px;
-  margin-bottom:8px;
+.start-btn:hover{
+  opacity:.9;
 }
 
-.login-card p{
+.small{
+  margin-top:15px;
   color:var(--muted);
-  margin-bottom:25px;
+  font-size:12px;
 }
 
-.google-btn{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
-  background:white;
-  color:#222;
-  border:1px solid #ddd;
-  font-weight:bold;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-}
-
-.google-btn:hover{
-  background:#f7f7f7;
-}
 
 /* PROFILE */
 
 #profilePage{
   height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   padding:20px;
 }
 
@@ -134,9 +137,9 @@ button{
   width:100%;
   max-width:430px;
   background:var(--card);
-  padding:28px;
-  border-radius:22px;
   border:1px solid var(--border);
+  border-radius:22px;
+  padding:28px;
 }
 
 .profile-card h2{
@@ -160,35 +163,31 @@ button{
 .input{
   width:100%;
   padding:13px;
-  border-radius:11px;
+  margin-bottom:12px;
   border:1px solid var(--border);
+  border-radius:11px;
+  outline:none;
   background:var(--bg);
   color:var(--text);
-  outline:none;
-  margin-bottom:12px;
+}
+
+.primary-btn,
+.skip-btn{
+  width:100%;
+  padding:13px;
+  border-radius:11px;
+  font-weight:bold;
 }
 
 .primary-btn{
-  width:100%;
-  padding:13px;
   border:0;
-  border-radius:11px;
   background:var(--primary);
-  color:white;
-  font-weight:bold;
-  margin-top:5px;
-}
-
-.primary-btn:hover{
-  background:var(--primary2);
+  color:#fff;
 }
 
 .skip-btn{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
+  margin-top:9px;
   border:1px solid var(--border);
-  border-radius:11px;
   background:transparent;
   color:var(--text);
 }
@@ -196,8 +195,9 @@ button{
 .error{
   color:#ef4444;
   font-size:13px;
-  margin:8px 0;
+  margin:5px 0 10px;
 }
+
 
 /* APP */
 
@@ -208,14 +208,14 @@ button{
 
 .sidebar{
   width:340px;
-  border-right:1px solid var(--border);
   background:var(--card);
+  border-right:1px solid var(--border);
   display:flex;
   flex-direction:column;
 }
 
 .sidebar-header{
-  padding:18px;
+  padding:17px;
   border-bottom:1px solid var(--border);
   display:flex;
   align-items:center;
@@ -250,19 +250,19 @@ button{
   width:100%;
   padding:12px;
   border:1px solid var(--border);
-  background:var(--bg);
-  color:var(--text);
   border-radius:10px;
   outline:none;
+  background:var(--bg);
+  color:var(--text);
 }
 
 .search-results{
   max-height:220px;
-  overflow-y:auto;
+  overflow:auto;
 }
 
 .user-result{
-  padding:12px;
+  padding:12px 5px;
   display:flex;
   align-items:center;
   gap:10px;
@@ -275,11 +275,10 @@ button{
 }
 
 .avatar{
-  width:42px;
-  height:42px;
+  width:43px;
+  height:43px;
   border-radius:50%;
   object-fit:cover;
-  background:#ddd;
 }
 
 .user-info{
@@ -288,28 +287,29 @@ button{
 
 .user-name{
   font-weight:bold;
-  white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
 .user-username{
   color:var(--muted);
   font-size:13px;
+  margin-top:3px;
 }
 
 .chat-list{
   flex:1;
-  overflow-y:auto;
+  overflow:auto;
 }
 
 .chat-item{
   padding:13px 15px;
   display:flex;
-  gap:11px;
   align-items:center;
-  cursor:pointer;
+  gap:11px;
   border-bottom:1px solid var(--border);
+  cursor:pointer;
 }
 
 .chat-item:hover{
@@ -320,10 +320,11 @@ button{
   color:var(--muted);
   font-size:13px;
   margin-top:4px;
-  white-space:nowrap;
   overflow:hidden;
+  white-space:nowrap;
   text-overflow:ellipsis;
 }
+
 
 /* CHAT */
 
@@ -337,43 +338,43 @@ button{
 .chat-header{
   height:70px;
   padding:12px 17px;
-  border-bottom:1px solid var(--border);
-  background:var(--card);
   display:flex;
   align-items:center;
   gap:12px;
+  background:var(--card);
+  border-bottom:1px solid var(--border);
+}
+
+.chat-info{
+  flex:1;
+}
+
+.chat-name{
+  font-weight:bold;
+}
+
+.status{
+  color:#22c55e;
+  font-size:12px;
+  margin-top:3px;
 }
 
 .back-btn{
   display:none;
 }
 
-.chat-user-info{
-  flex:1;
-}
-
-.chat-user-name{
-  font-weight:bold;
-}
-
-.chat-user-status{
-  color:#22c55e;
-  font-size:12px;
-  margin-top:3px;
-}
-
 .messages{
   flex:1;
-  overflow-y:auto;
+  overflow:auto;
   padding:20px;
   background:var(--bg);
 }
 
-.empty-chat{
+.empty{
   height:100%;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
   color:var(--muted);
 }
@@ -390,10 +391,9 @@ button{
 .message{
   max-width:75%;
   padding:10px 12px;
-  border-radius:14px;
-  background:var(--other);
   border:1px solid var(--border);
-  position:relative;
+  border-radius:15px;
+  background:var(--other);
 }
 
 .message-row.mine .message{
@@ -409,7 +409,20 @@ button{
   font-size:10px;
   color:var(--muted);
   text-align:right;
-  margin-top:4px;
+  margin-top:5px;
+}
+
+.reply-box{
+  border-left:3px solid var(--primary);
+  padding-left:7px;
+  margin-bottom:7px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.reaction{
+  font-size:12px;
+  margin-top:3px;
 }
 
 .message-actions{
@@ -423,38 +436,25 @@ button{
   background:transparent;
   color:var(--muted);
   font-size:11px;
-  padding:2px 4px;
-}
-
-.reply-box{
-  border-left:3px solid var(--primary);
-  padding-left:8px;
-  margin-bottom:7px;
-  color:var(--muted);
-  font-size:12px;
-}
-
-.reaction{
-  font-size:12px;
-  margin-top:3px;
 }
 
 .composer{
+  display:flex;
+  gap:8px;
   padding:12px;
   background:var(--card);
   border-top:1px solid var(--border);
-  display:flex;
-  gap:8px;
 }
 
 .message-input{
   flex:1;
-  border:1px solid var(--border);
-  background:var(--bg);
-  color:var(--text);
+  min-width:0;
   padding:12px;
+  border:1px solid var(--border);
   border-radius:12px;
   outline:none;
+  background:var(--bg);
+  color:var(--text);
 }
 
 .send-btn{
@@ -462,9 +462,10 @@ button{
   border:0;
   border-radius:12px;
   background:var(--primary);
-  color:white;
-  font-size:20px;
+  color:#fff;
+  font-size:19px;
 }
+
 
 /* MOBILE */
 
@@ -499,31 +500,48 @@ button{
 
 <body>
 
-<!-- LOGIN -->
-<section id="loginPage">
-  <div class="login-card">
-    <div class="logo">C</div>
-    <h1>Chatterly</h1>
-    <p>Simple, private and real-time chatting.</p>
 
-    <button class="google-btn" id="googleLogin">
-      <span>G</span>
-      Continue with Google
+<!-- WELCOME -->
+
+<section id="welcomePage">
+
+  <div class="welcome-card">
+
+    <div class="logo">C</div>
+
+    <h1>Welcome to Chatterly</h1>
+
+    <p>
+      Chat with people in real time.
+      No account setup required to get started.
+    </p>
+
+    <button id="getStarted" class="start-btn">
+      Get Started
     </button>
 
-    <div id="loginError" class="error"></div>
+    <div class="small">
+      You can create your profile later.
+    </div>
+
   </div>
+
 </section>
 
 
 <!-- PROFILE -->
+
 <section id="profilePage" class="hidden">
+
   <div class="profile-card">
 
     <img id="profilePhoto" class="profile-photo">
 
-    <h2>Set up your profile</h2>
-    <p>You can complete it now or skip and start using Chatterly.</p>
+    <h2>Create your profile</h2>
+
+    <p>
+      This is optional. You can skip it and use Chatterly now.
+    </p>
 
     <input
       id="displayName"
@@ -535,37 +553,51 @@ button{
     <input
       id="username"
       class="input"
-      placeholder="Username e.g. aashish123"
+      placeholder="Username"
       maxlength="20"
     >
 
     <div id="profileError" class="error"></div>
 
     <button id="saveProfile" class="primary-btn">
-      Continue
+      Save Profile
     </button>
 
     <button id="skipProfile" class="skip-btn">
-      Skip for now
+      Skip
     </button>
 
   </div>
+
 </section>
 
 
 <!-- APP -->
+
 <section id="appPage" class="hidden">
 
   <aside class="sidebar">
 
     <div class="sidebar-header">
-      <div class="brand">Chatterly</div>
+
+      <div class="brand">
+        Chatterly
+      </div>
 
       <div class="header-actions">
-        <button class="icon-btn" id="darkModeBtn">🌙</button>
-        <button class="icon-btn" id="logoutBtn">↪</button>
+
+        <button id="darkMode" class="icon-btn">
+          🌙
+        </button>
+
+        <button id="logout" class="icon-btn">
+          ↪
+        </button>
+
       </div>
+
     </div>
+
 
     <div class="search-box">
 
@@ -579,6 +611,7 @@ button{
 
     </div>
 
+
     <div id="chatList" class="chat-list"></div>
 
   </aside>
@@ -588,17 +621,20 @@ button{
 
     <div class="chat-header">
 
-      <button id="backBtn" class="icon-btn back-btn">←</button>
+      <button id="backBtn" class="icon-btn back-btn">
+        ←
+      </button>
 
       <img id="chatAvatar" class="avatar">
 
-      <div class="chat-user-info">
-        <div id="chatName" class="chat-user-name">
+      <div class="chat-info">
+
+        <div id="chatName" class="chat-name">
           Select a chat
         </div>
 
-        <div id="chatStatus" class="chat-user-status">
-        </div>
+        <div id="chatStatus" class="status"></div>
+
       </div>
 
     </div>
@@ -606,11 +642,13 @@ button{
 
     <div id="messages" class="messages">
 
-      <div class="empty-chat">
+      <div class="empty">
+
         <div>
-          <h2>Welcome to Chatterly 👋</h2>
-          <p>Search for a username to start chatting.</p>
+          <h2>Welcome 👋</h2>
+          <p>Search for someone to start chatting.</p>
         </div>
+
       </div>
 
     </div>
@@ -644,9 +682,7 @@ import {
 
 import {
   getAuth,
-  GoogleAuthProvider,
-  signInWithRedirect,
-  getRedirectResult,
+  signInAnonymously,
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
@@ -674,27 +710,42 @@ import {
 ========================= */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDitPl7OUTOxzRtiaFBjTKFdB1T_YqLFM4",
-  authDomain: "catterfly-64309.firebaseapp.com",
-  projectId: "catterfly-64309",
-  storageBucket: "catterfly-64309.firebasestorage.app",
-  messagingSenderId: "875167607108",
-  appId: "1:875167607108:web:49cab44656f7467bb64f11",
-  measurementId: "G-JML2V6YEDS"
+
+  apiKey:
+    "AIzaSyDitPl7OUTOxzRtiaFBjTKFdB1T_YqLFM4",
+
+  authDomain:
+    "catterfly-64309.firebaseapp.com",
+
+  projectId:
+    "catterfly-64309",
+
+  storageBucket:
+    "catterfly-64309.firebasestorage.app",
+
+  messagingSenderId:
+    "875167607108",
+
+  appId:
+    "1:875167607108:web:49cab44656f7467bb64f11",
+
+  measurementId:
+    "G-JML2V6YEDS"
 };
 
 
 /* =========================
-   FIREBASE INIT
+   FIREBASE
 ========================= */
 
-const app = initializeApp(firebaseConfig);
+const app =
+  initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth =
+  getAuth(app);
 
-const db = getFirestore(app);
-
-const provider = new GoogleAuthProvider();
+const db =
+  getFirestore(app);
 
 
 /* =========================
@@ -705,159 +756,236 @@ let currentUser = null;
 let currentProfile = null;
 let currentChatId = null;
 let currentChatUser = null;
+
 let unsubscribeMessages = null;
 let unsubscribeChats = null;
 
-const $ = id => document.getElementById(id);
-
 
 /* =========================
-   PAGE HELPERS
+   HELPERS
 ========================= */
 
-function showPage(page){
+const $ = id =>
+  document.getElementById(id);
 
-  $("loginPage").classList.add("hidden");
-  $("profilePage").classList.add("hidden");
-  $("appPage").classList.add("hidden");
 
-  $(page).classList.remove("hidden");
+function showPage(id){
+
+  $("welcomePage")
+    .classList.add("hidden");
+
+  $("profilePage")
+    .classList.add("hidden");
+
+  $("appPage")
+    .classList.add("hidden");
+
+  $(id)
+    .classList.remove("hidden");
 }
 
 
-/* =========================
-   AVATAR
-========================= */
-
 function avatarURL(user){
 
-  if(user?.photoURL){
+  if(user && user.photoURL){
     return user.photoURL;
   }
 
   const name =
+    user?.name ||
     user?.displayName ||
-    user?.username ||
     "User";
 
-  return "https://ui-avatars.com/api/?name=" +
+  return (
+    "https://ui-avatars.com/api/?name=" +
     encodeURIComponent(name) +
-    "&background=2563eb&color=fff";
+    "&background=2563eb&color=fff"
+  );
+}
+
+
+function escapeHTML(value){
+
+  return String(value || "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
 }
 
 
 /* =========================
-   GOOGLE LOGIN
+   GET STARTED
 ========================= */
 
-$("googleLogin").addEventListener("click", async () => {
+$("getStarted")
+.addEventListener("click", async () => {
 
-  $("loginError").textContent = "";
+  $("getStarted").disabled = true;
+
+  $("getStarted").textContent =
+    "Starting...";
 
   try{
 
-    await signInWithRedirect(auth, provider);
+    /*
+      Firebase creates an anonymous
+      account automatically.
+      User does not need to enter
+      email, password or phone.
+    */
+
+    await signInAnonymously(auth);
 
   }catch(error){
 
     console.error(error);
 
-    $("loginError").textContent =
-      error.message || "Google login failed.";
+    alert(
+      error.message ||
+      "Could not start Chatterly."
+    );
 
+    $("getStarted").disabled = false;
+
+    $("getStarted").textContent =
+      "Get Started";
   }
 
 });
-
-
-/* =========================
-   REDIRECT RESULT
-========================= */
-
-getRedirectResult(auth)
-  .then(result => {
-
-    if(result?.user){
-      console.log("Google login successful");
-    }
-
-  })
-  .catch(error => {
-
-    console.error(error);
-
-    $("loginError").textContent =
-      error.message || "Login failed.";
-
-  });
 
 
 /* =========================
    AUTH STATE
 ========================= */
 
-onAuthStateChanged(auth, async user => {
+onAuthStateChanged(
+  auth,
+  async user => {
 
-  if(!user){
+    if(!user){
 
-    currentUser = null;
-    currentProfile = null;
+      currentUser = null;
 
-    showPage("loginPage");
+      showPage("welcomePage");
 
-    return;
+      return;
+    }
+
+    currentUser = user;
+
+    await setupUser();
+
   }
-
-  currentUser = user;
-
-  await handleUserLogin();
-
-});
+);
 
 
 /* =========================
-   USER LOGIN
+   USER SETUP
 ========================= */
 
-async function handleUserLogin(){
+async function setupUser(){
 
   try{
 
     const userRef =
-      doc(db, "users", currentUser.uid);
+      doc(
+        db,
+        "users",
+        currentUser.uid
+      );
 
-    const userSnap =
+    const snap =
       await getDoc(userRef);
 
 
-    if(userSnap.exists()){
+    if(snap.exists()){
 
-      currentProfile = userSnap.data();
+      currentProfile =
+        snap.data();
 
       showPage("appPage");
 
       loadChats();
 
-    }else{
-
-      $("profilePhoto").src =
-        avatarURL(currentUser);
-
-      $("displayName").value =
-        currentUser.displayName || "";
-
-      showPage("profilePage");
-
+      return;
     }
+
+
+    /*
+      New anonymous user:
+      Give an automatic profile.
+    */
+
+    const username =
+      "user_" +
+      currentUser.uid
+        .substring(0,8)
+        .toLowerCase();
+
+
+    const profile = {
+
+      uid:
+        currentUser.uid,
+
+      name:
+        "Chatterly User",
+
+      username:
+        username,
+
+      photoURL:
+        "",
+
+      anonymous:
+        true,
+
+      createdAt:
+        serverTimestamp()
+
+    };
+
+
+    await setDoc(
+      userRef,
+      profile
+    );
+
+
+    await setDoc(
+      doc(
+        db,
+        "usernames",
+        username
+      ),
+      {
+        uid:
+          currentUser.uid,
+
+        username:
+          username
+      }
+    );
+
+
+    currentProfile =
+      profile;
+
+    showPage("appPage");
+
+    loadChats();
 
   }catch(error){
 
     console.error(error);
 
-    $("loginError").textContent =
-      error.message;
-
-    showPage("loginPage");
+    alert(
+      error.message ||
+      "User setup failed."
+    );
 
   }
 
@@ -865,57 +993,61 @@ async function handleUserLogin(){
 
 
 /* =========================
-   CREATE PROFILE
+   PROFILE SAVE
 ========================= */
 
-$("saveProfile").addEventListener("click", async () => {
+$("saveProfile")
+.addEventListener("click", async () => {
 
   const name =
-    $("displayName").value.trim();
+    $("displayName")
+      .value
+      .trim();
 
-  let username =
-    $("username").value.trim()
+  const username =
+    $("username")
+      .value
+      .trim()
       .toLowerCase()
       .replace(/[^a-z0-9_]/g,"");
 
-  $("profileError").textContent = "";
 
   if(!name){
 
     $("profileError").textContent =
-      "Please enter your name.";
+      "Enter your name.";
 
     return;
   }
 
-  if(!username){
-
-    $("profileError").textContent =
-      "Please enter a username.";
-
-    return;
-  }
 
   if(username.length < 3){
 
     $("profileError").textContent =
-      "Username must be at least 3 characters.";
+      "Username must contain at least 3 characters.";
 
     return;
   }
 
+
   try{
 
     const usernameRef =
-      doc(db, "usernames", username);
+      doc(
+        db,
+        "usernames",
+        username
+      );
 
-    const usernameSnap =
+
+    const existing =
       await getDoc(usernameRef);
 
-    if(usernameSnap.exists()){
+
+    if(existing.exists()){
 
       $("profileError").textContent =
-        "This username is already taken.";
+        "Username already exists.";
 
       return;
     }
@@ -923,35 +1055,54 @@ $("saveProfile").addEventListener("click", async () => {
 
     const profile = {
 
-      uid: currentUser.uid,
+      uid:
+        currentUser.uid,
 
-      name: name,
+      name:
+        name,
 
-      username: username,
+      username:
+        username,
 
-      photoURL: currentUser.photoURL || "",
+      photoURL:
+        "",
 
-      createdAt: serverTimestamp()
+      anonymous:
+        true,
+
+      updatedAt:
+        serverTimestamp()
 
     };
 
 
     await setDoc(
-      doc(db, "users", currentUser.uid),
-      profile
+      doc(
+        db,
+        "users",
+        currentUser.uid
+      ),
+      profile,
+      {
+        merge:true
+      }
     );
 
 
     await setDoc(
       usernameRef,
       {
-        uid: currentUser.uid,
-        username: username
+        uid:
+          currentUser.uid,
+
+        username:
+          username
       }
     );
 
 
-    currentProfile = profile;
+    currentProfile =
+      profile;
 
     showPage("appPage");
 
@@ -962,7 +1113,7 @@ $("saveProfile").addEventListener("click", async () => {
     console.error(error);
 
     $("profileError").textContent =
-      error.message || "Profile setup failed.";
+      error.message;
 
   }
 
@@ -970,70 +1121,15 @@ $("saveProfile").addEventListener("click", async () => {
 
 
 /* =========================
-   SKIP PROFILE
+   PROFILE SKIP
 ========================= */
 
-$("skipProfile").addEventListener("click", async () => {
+$("skipProfile")
+.addEventListener("click", () => {
 
-  $("profileError").textContent = "";
+  showPage("appPage");
 
-  try{
-
-    const generatedUsername =
-      "user_" +
-      currentUser.uid
-        .substring(0,8)
-        .toLowerCase();
-
-    const profile = {
-
-      uid: currentUser.uid,
-
-      name:
-        currentUser.displayName ||
-        "Chatterly User",
-
-      username: generatedUsername,
-
-      photoURL:
-        currentUser.photoURL || "",
-
-      skippedProfile: true,
-
-      createdAt: serverTimestamp()
-
-    };
-
-
-    await setDoc(
-      doc(db, "users", currentUser.uid),
-      profile
-    );
-
-
-    await setDoc(
-      doc(db, "usernames", generatedUsername),
-      {
-        uid: currentUser.uid,
-        username: generatedUsername
-      }
-    );
-
-
-    currentProfile = profile;
-
-    showPage("appPage");
-
-    loadChats();
-
-  }catch(error){
-
-    console.error(error);
-
-    $("profileError").textContent =
-      error.message || "Could not skip profile.";
-
-  }
+  loadChats();
 
 });
 
@@ -1042,9 +1138,9 @@ $("skipProfile").addEventListener("click", async () => {
    CHAT ID
 ========================= */
 
-function makeChatId(uid1, uid2){
+function makeChatId(a,b){
 
-  return [uid1, uid2]
+  return [a,b]
     .sort()
     .join("_");
 
@@ -1057,7 +1153,8 @@ function makeChatId(uid1, uid2){
 
 async function openChat(user){
 
-  currentChatUser = user;
+  currentChatUser =
+    user;
 
   currentChatId =
     makeChatId(
@@ -1069,30 +1166,41 @@ async function openChat(user){
   try{
 
     await setDoc(
-      doc(db, "chats", currentChatId),
+      doc(
+        db,
+        "chats",
+        currentChatId
+      ),
       {
-        members: [
+
+        members:[
           currentUser.uid,
           user.uid
         ],
 
-        userNames: {
+        userNames:{
           [currentUser.uid]:
-            currentProfile?.name || "User",
+            currentProfile?.name ||
+            "User",
 
           [user.uid]:
-            user.name || "User"
+            user.name ||
+            "User"
         },
 
-        userUsernames: {
+        userUsernames:{
           [currentUser.uid]:
-            currentProfile?.username || "",
+            currentProfile?.username ||
+            "",
 
           [user.uid]:
-            user.username || ""
+            user.username ||
+            ""
         },
 
-        updatedAt: serverTimestamp()
+        updatedAt:
+          serverTimestamp()
+
       },
       {
         merge:true
@@ -1101,10 +1209,11 @@ async function openChat(user){
 
 
     $("chatName").textContent =
-      user.name || "User";
+      user.name ||
+      "User";
 
     $("chatStatus").textContent =
-      "Online";
+      "Available";
 
     $("chatAvatar").src =
       avatarURL(user);
@@ -1114,8 +1223,8 @@ async function openChat(user){
 
     listenMessages();
 
-    document
-      .getElementById("appPage")
+
+    $("appPage")
       .classList.add("chat-open");
 
   }catch(error){
@@ -1133,7 +1242,7 @@ async function openChat(user){
 
 
 /* =========================
-   LISTEN MESSAGES
+   MESSAGES LISTENER
 ========================= */
 
 function listenMessages(){
@@ -1142,7 +1251,8 @@ function listenMessages(){
     unsubscribeMessages();
   }
 
-  const messagesRef =
+
+  const ref =
     collection(
       db,
       "chats",
@@ -1153,49 +1263,59 @@ function listenMessages(){
 
   const q =
     query(
-      messagesRef,
-      orderBy("createdAt","asc")
+      ref,
+      orderBy(
+        "createdAt",
+        "asc"
+      )
     );
 
 
   unsubscribeMessages =
-    onSnapshot(q, snapshot => {
+    onSnapshot(
+      q,
+      snapshot => {
 
-      $("messages").innerHTML = "";
+        $("messages").innerHTML = "";
 
-      if(snapshot.empty){
 
-        $("messages").innerHTML = `
-          <div class="empty-chat">
-            <div>
-              <h3>No messages yet</h3>
-              <p>Send the first message 👋</p>
+        if(snapshot.empty){
+
+          $("messages").innerHTML = `
+            <div class="empty">
+              <div>
+                <h3>No messages yet</h3>
+                <p>Send the first message 👋</p>
+              </div>
             </div>
-          </div>
-        `;
+          `;
 
-        return;
-      }
+          return;
+        }
 
 
-      snapshot.forEach(messageDoc => {
+        snapshot.forEach(
+          message => {
 
-        renderMessage(
-          messageDoc.id,
-          messageDoc.data()
+            renderMessage(
+              message.id,
+              message.data()
+            );
+
+          }
         );
 
-      });
 
+        $("messages").scrollTop =
+          $("messages").scrollHeight;
 
-      $("messages").scrollTop =
-        $("messages").scrollHeight;
+      },
+      error => {
 
-    }, error => {
+        console.error(error);
 
-      console.error(error);
-
-    });
+      }
+    );
 
 }
 
@@ -1204,10 +1324,11 @@ function listenMessages(){
    RENDER MESSAGE
 ========================= */
 
-function renderMessage(id, data){
+function renderMessage(id,data){
 
   const mine =
-    data.senderId === currentUser.uid;
+    data.senderId ===
+    currentUser.uid;
 
 
   const row =
@@ -1221,7 +1342,8 @@ function renderMessage(id, data){
   const box =
     document.createElement("div");
 
-  box.className = "message";
+  box.className =
+    "message";
 
 
   if(data.replyText){
@@ -1229,7 +1351,8 @@ function renderMessage(id, data){
     const reply =
       document.createElement("div");
 
-    reply.className = "reply-box";
+    reply.className =
+      "reply-box";
 
     reply.textContent =
       data.replyText;
@@ -1242,7 +1365,8 @@ function renderMessage(id, data){
   const text =
     document.createElement("div");
 
-  text.className = "message-text";
+  text.className =
+    "message-text";
 
   text.textContent =
     data.text || "";
@@ -1259,7 +1383,8 @@ function renderMessage(id, data){
       "reaction";
 
     reaction.textContent =
-      "❤️ " + data.reaction;
+      "❤️ " +
+      data.reaction;
 
     box.appendChild(reaction);
 
@@ -1272,13 +1397,15 @@ function renderMessage(id, data){
   time.className =
     "message-time";
 
+
   if(data.createdAt){
 
     try{
 
       time.textContent =
         new Date(
-          data.createdAt.seconds * 1000
+          data.createdAt.seconds *
+          1000
         ).toLocaleTimeString(
           [],
           {
@@ -1306,43 +1433,55 @@ function renderMessage(id, data){
     "message-actions";
 
 
-  const reactBtn =
+  const heart =
     document.createElement("button");
 
-  reactBtn.textContent =
+  heart.textContent =
     "❤️";
 
-  reactBtn.onclick = () =>
-    toggleReaction(id, data);
+  heart.onclick =
+    () => toggleReaction(
+      id,
+      data
+    );
 
 
-  const replyBtn =
+  const reply =
     document.createElement("button");
 
-  replyBtn.textContent =
+  reply.textContent =
     "Reply";
 
-  replyBtn.onclick = () =>
-    replyMessage(data);
+  reply.onclick =
+    () => {
+
+      $("messageInput").value =
+        "> " +
+        (data.text || "") +
+        "\n";
+
+      $("messageInput").focus();
+
+    };
 
 
-  actions.appendChild(reactBtn);
+  actions.appendChild(heart);
 
-  actions.appendChild(replyBtn);
+  actions.appendChild(reply);
 
 
   if(mine){
 
-    const deleteBtn =
+    const del =
       document.createElement("button");
 
-    deleteBtn.textContent =
+    del.textContent =
       "Delete";
 
-    deleteBtn.onclick = () =>
-      deleteMessage(id);
+    del.onclick =
+      () => deleteMessage(id);
 
-    actions.appendChild(deleteBtn);
+    actions.appendChild(del);
 
   }
 
@@ -1357,7 +1496,7 @@ function renderMessage(id, data){
 
 
 /* =========================
-   SEND MESSAGE
+   SEND
 ========================= */
 
 async function sendMessage(){
@@ -1368,9 +1507,12 @@ async function sendMessage(){
   const text =
     input.value.trim();
 
-  if(!text) return;
 
-  if(!currentChatId) return;
+  if(!text ||
+     !currentChatId){
+
+    return;
+  }
 
 
   input.value = "";
@@ -1386,7 +1528,9 @@ async function sendMessage(){
         "messages"
       ),
       {
-        text: text,
+
+        text:
+          text,
 
         senderId:
           currentUser.uid,
@@ -1397,6 +1541,7 @@ async function sendMessage(){
 
         createdAt:
           serverTimestamp()
+
       }
     );
 
@@ -1408,11 +1553,15 @@ async function sendMessage(){
         currentChatId
       ),
       {
-        lastMessage: text,
-        updatedAt: serverTimestamp()
+
+        lastMessage:
+          text,
+
+        updatedAt:
+          serverTimestamp()
+
       }
     );
-
 
   }catch(error){
 
@@ -1420,7 +1569,7 @@ async function sendMessage(){
 
     alert(
       error.message ||
-      "Message could not be sent."
+      "Message failed."
     );
 
   }
@@ -1428,13 +1577,15 @@ async function sendMessage(){
 }
 
 
-$("sendBtn").addEventListener(
+$("sendBtn")
+.addEventListener(
   "click",
   sendMessage
 );
 
 
-$("messageInput").addEventListener(
+$("messageInput")
+.addEventListener(
   "keydown",
   event => {
 
@@ -1454,22 +1605,18 @@ $("messageInput").addEventListener(
    REACTION
 ========================= */
 
-async function toggleReaction(id, data){
+async function toggleReaction(id,data){
 
   try{
 
-    const ref =
+    await updateDoc(
       doc(
         db,
         "chats",
         currentChatId,
         "messages",
         id
-      );
-
-
-    await updateDoc(
-      ref,
+      ),
       {
         reaction:
           data.reaction
@@ -1483,22 +1630,6 @@ async function toggleReaction(id, data){
     console.error(error);
 
   }
-
-}
-
-
-/* =========================
-   REPLY
-========================= */
-
-function replyMessage(data){
-
-  $("messageInput").value =
-    "> " +
-    (data.text || "") +
-    "\n";
-
-  $("messageInput").focus();
 
 }
 
@@ -1531,12 +1662,14 @@ async function deleteMessage(id){
 
 
 /* =========================
-   USER SEARCH
+   SEARCH
 ========================= */
 
-let searchTimer = null;
+let searchTimer;
 
-$("searchInput").addEventListener(
+
+$("searchInput")
+.addEventListener(
   "input",
   () => {
 
@@ -1561,10 +1694,10 @@ async function searchUsers(){
       .toLowerCase();
 
 
-  const resultBox =
+  const box =
     $("searchResults");
 
-  resultBox.innerHTML = "";
+  box.innerHTML = "";
 
 
   if(!term) return;
@@ -1572,75 +1705,91 @@ async function searchUsers(){
 
   try{
 
-    const usersRef =
-      collection(db, "users");
-
-
     const snapshot =
-      await getDocs(usersRef);
-
-
-    snapshot.forEach(userDoc => {
-
-      const user =
-        userDoc.data();
-
-
-      if(
-        user.uid !== currentUser.uid &&
-        (
-          (user.username || "")
-            .toLowerCase()
-            .includes(term)
-          ||
-          (user.name || "")
-            .toLowerCase()
-            .includes(term)
+      await getDocs(
+        collection(
+          db,
+          "users"
         )
-      ){
-
-        const item =
-          document.createElement("div");
-
-        item.className =
-          "user-result";
+      );
 
 
-        item.innerHTML = `
-          <img class="avatar"
-               src="${avatarURL(user)}">
+    snapshot.forEach(
+      userDoc => {
 
-          <div class="user-info">
-            <div class="user-name">
-              ${escapeHTML(user.name || "User")}
+        const user =
+          userDoc.data();
+
+
+        if(
+          user.uid !==
+          currentUser.uid
+          &&
+          (
+            (user.username || "")
+              .toLowerCase()
+              .includes(term)
+            ||
+            (user.name || "")
+              .toLowerCase()
+              .includes(term)
+          )
+        ){
+
+          const item =
+            document.createElement(
+              "div"
+            );
+
+          item.className =
+            "user-result";
+
+
+          item.innerHTML = `
+            <img
+              class="avatar"
+              src="${avatarURL(user)}"
+            >
+
+            <div class="user-info">
+
+              <div class="user-name">
+                ${escapeHTML(
+                  user.name ||
+                  "User"
+                )}
+              </div>
+
+              <div class="user-username">
+                @${escapeHTML(
+                  user.username ||
+                  ""
+                )}
+              </div>
+
             </div>
-
-            <div class="user-username">
-              @${escapeHTML(user.username || "")}
-            </div>
-          </div>
-        `;
+          `;
 
 
-        item.addEventListener(
-          "click",
-          () => {
+          item.onclick =
+            () => {
 
-            $("searchInput").value = "";
+              box.innerHTML = "";
 
-            resultBox.innerHTML = "";
+              $("searchInput")
+                .value = "";
 
-            openChat(user);
+              openChat(user);
 
-          }
-        );
+            };
 
 
-        resultBox.appendChild(item);
+          box.appendChild(item);
+
+        }
 
       }
-
-    });
+    );
 
   }catch(error){
 
@@ -1662,13 +1811,12 @@ function loadChats(){
   }
 
 
-  const chatsRef =
-    collection(db, "chats");
-
-
   const q =
     query(
-      chatsRef,
+      collection(
+        db,
+        "chats"
+      ),
       where(
         "members",
         "array-contains",
@@ -1684,28 +1832,29 @@ function loadChats(){
 
         const chats = [];
 
-        snapshot.forEach(docSnap => {
 
-          chats.push({
-            id:docSnap.id,
-            ...docSnap.data()
-          });
+        snapshot.forEach(
+          item => {
 
-        });
+            chats.push({
+              id:item.id,
+              ...item.data()
+            });
+
+          }
+        );
 
 
         chats.sort(
-          (a,b) => {
-
-            const aTime =
-              a.updatedAt?.seconds || 0;
-
-            const bTime =
-              b.updatedAt?.seconds || 0;
-
-            return bTime - aTime;
-
-          }
+          (a,b) =>
+            (
+              b.updatedAt?.seconds ||
+              0
+            ) -
+            (
+              a.updatedAt?.seconds ||
+              0
+            )
         );
 
 
@@ -1739,8 +1888,8 @@ function renderChatList(chats){
     list.innerHTML = `
       <div style="
         padding:20px;
-        color:var(--muted);
         text-align:center;
+        color:var(--muted);
       ">
         No chats yet.<br>
         Search a username above.
@@ -1748,84 +1897,83 @@ function renderChatList(chats){
     `;
 
     return;
-
   }
 
 
-  chats.forEach(chat => {
+  chats.forEach(
+    chat => {
 
-    const otherUid =
-      chat.members.find(
-        uid => uid !== currentUser.uid
-      );
-
-
-    if(!otherUid) return;
-
-
-    const name =
-      chat.userNames?.[otherUid]
-      || "User";
+      const otherUid =
+        chat.members.find(
+          uid =>
+            uid !==
+            currentUser.uid
+        );
 
 
-    const username =
-      chat.userUsernames?.[otherUid]
-      || "";
+      if(!otherUid) return;
 
 
-    const item =
-      document.createElement("div");
-
-    item.className =
-      "chat-item";
+      const name =
+        chat.userNames?.[otherUid]
+        || "User";
 
 
-    const avatar =
-      document.createElement("img");
+      const item =
+        document.createElement(
+          "div"
+        );
 
-    avatar.className =
-      "avatar";
-
-
-    const info =
-      document.createElement("div");
-
-    info.className =
-      "user-info";
+      item.className =
+        "chat-item";
 
 
-    info.innerHTML = `
-      <div class="user-name">
-        ${escapeHTML(name)}
-      </div>
+      const img =
+        document.createElement(
+          "img"
+        );
 
-      <div class="chat-preview">
-        ${escapeHTML(
-          chat.lastMessage ||
-          "Start chatting"
-        )}
-      </div>
-    `;
+      img.className =
+        "avatar";
 
-
-    avatar.src =
-      "https://ui-avatars.com/api/?name=" +
-      encodeURIComponent(name) +
-      "&background=2563eb&color=fff";
+      img.src =
+        "https://ui-avatars.com/api/?name=" +
+        encodeURIComponent(name) +
+        "&background=2563eb&color=fff";
 
 
-    item.appendChild(avatar);
+      const info =
+        document.createElement(
+          "div"
+        );
 
-    item.appendChild(info);
+      info.className =
+        "user-info";
 
 
-    item.addEventListener(
-      "click",
-      async () => {
+      info.innerHTML = `
+        <div class="user-name">
+          ${escapeHTML(name)}
+        </div>
 
-        try{
+        <div class="chat-preview">
+          ${escapeHTML(
+            chat.lastMessage ||
+            "Start chatting"
+          )}
+        </div>
+      `;
 
-          const userSnap =
+
+      item.appendChild(img);
+
+      item.appendChild(info);
+
+
+      item.onclick =
+        async () => {
+
+          const snap =
             await getDoc(
               doc(
                 db,
@@ -1835,35 +1983,21 @@ function renderChatList(chats){
             );
 
 
-          if(userSnap.exists()){
+          if(snap.exists()){
 
             openChat(
-              userSnap.data()
+              snap.data()
             );
-
-          }else{
-
-            openChat({
-              uid:otherUid,
-              name:name,
-              username:username
-            });
 
           }
 
-        }catch(error){
-
-          console.error(error);
-
-        }
-
-      }
-    );
+        };
 
 
-    list.appendChild(item);
+      list.appendChild(item);
 
-  });
+    }
+  );
 
 }
 
@@ -1872,21 +2006,29 @@ function renderChatList(chats){
    DARK MODE
 ========================= */
 
-$("darkModeBtn").addEventListener(
+$("darkMode")
+.addEventListener(
   "click",
   () => {
 
-    document.body.classList.toggle("dark");
+    document.body
+      .classList
+      .toggle("dark");
+
 
     const dark =
-      document.body.classList.contains("dark");
+      document.body
+        .classList
+        .contains("dark");
+
 
     localStorage.setItem(
       "chatterlyDark",
       dark ? "1" : "0"
     );
 
-    $("darkModeBtn").textContent =
+
+    $("darkMode").textContent =
       dark ? "☀️" : "🌙";
 
   }
@@ -1899,9 +2041,11 @@ if(
   ) === "1"
 ){
 
-  document.body.classList.add("dark");
+  document.body
+    .classList
+    .add("dark");
 
-  $("darkModeBtn").textContent =
+  $("darkMode").textContent =
     "☀️";
 
 }
@@ -1911,19 +2055,20 @@ if(
    LOGOUT
 ========================= */
 
-$("logoutBtn").addEventListener(
+$("logout")
+.addEventListener(
   "click",
   async () => {
 
+    if(unsubscribeMessages){
+      unsubscribeMessages();
+    }
+
+    if(unsubscribeChats){
+      unsubscribeChats();
+    }
+
     try{
-
-      if(unsubscribeMessages){
-        unsubscribeMessages();
-      }
-
-      if(unsubscribeChats){
-        unsubscribeChats();
-      }
 
       await signOut(auth);
 
@@ -1941,12 +2086,14 @@ $("logoutBtn").addEventListener(
    MOBILE BACK
 ========================= */
 
-$("backBtn").addEventListener(
+$("backBtn")
+.addEventListener(
   "click",
   () => {
 
     $("appPage")
-      .classList.remove("chat-open");
+      .classList
+      .remove("chat-open");
 
     currentChatId = null;
 
@@ -1962,22 +2109,6 @@ $("backBtn").addEventListener(
 
   }
 );
-
-
-/* =========================
-   ESCAPE HTML
-========================= */
-
-function escapeHTML(value){
-
-  return String(value || "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
 
 </script>
 
